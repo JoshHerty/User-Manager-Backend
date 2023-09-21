@@ -65,7 +65,7 @@ return [
 // changed for hosting (aws)
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('RDS_HOST', '127.0.0.1'),
+            'host' => env('RDS_HOSTNAME', '127.0.0.1'),
             'port' => env('RDS_PORT', '5432'),
             'database' => env('RDS_DB_NAME', 'PracticeAuthDB'),
             'username' => env('RDS_USERNAME', 'userManager'),
