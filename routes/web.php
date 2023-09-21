@@ -19,6 +19,6 @@ Route::get('/', function () {
 // added for hosting
 Route::get('/run-migration', function () {
     Artisan::call('optimize:clear');
-    Artisan::call('migrate:fresh --sedd');
+    Artisan::call('migrate:fresh --seed');
     return "Migrations executed successfully";
 });
