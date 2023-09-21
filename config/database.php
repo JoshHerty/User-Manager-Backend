@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,21 +62,37 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
+// changed for hosting (aws)
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('RDS_HOST', '127.0.0.1'),
+            'port' => env('RDS_PORT', '5432'),
+            'database' => env('RDS_DB_NAME', 'PracticeAuthDB'),
+            'username' => env('RDS_USERNAME', 'user_manager'),
+            'password' => env('RDS_PASSWORD', 'Ctgoadan58!'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => 'public',
+            // 'search_path' => 'public',
+            'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'port' => env('DB_PORT', '5432'),
+        //     'database' => env('DB_DATABASE', 'PracticeAuthDB'),
+        //     'username' => env('DB_USERNAME', 'user_manager'),
+        //     'password' => env('DB_PASSWORD', 'Ctgoadan58!'),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     // 'search_path' => 'public',
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
