@@ -68,7 +68,7 @@ return [
             'host' => env('RDS_HOST', '127.0.0.1'),
             'port' => env('RDS_PORT', '5432'),
             'database' => env('RDS_DB_NAME', 'PracticeAuthDB'),
-            'username' => env('RDS_USERNAME', 'userManager'),
+            'username' => env('RDS_USERNAME', 'user-manager'),
             'password' => env('RDS_PASSWORD', 'Ctgoadan58!'),
             'charset' => 'utf8',
             'prefix' => '',
